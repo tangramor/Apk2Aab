@@ -30,6 +30,9 @@ REM Sign AAB file
 jarsigner -digestalg SHA1 -sigalg SHA1withRSA -keystore %keystore% -storepass %storepass% -keypass %keypass% work\unsign.aab %keyalias%
 IF %ERRORLEVEL% NEQ 0 GOTO ERROR
 
+move work\unsign.aab work\signed.aab
+IF %ERRORLEVEL% NEQ 0 GOTO ERROR
+
 :OK
 ECHO [STEP 4] command success
 GOTO END
