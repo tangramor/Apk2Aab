@@ -16,9 +16,9 @@ set dynamiczip=%1
 set packagename=%2
 
 if "%packagename%"=="" (
-	ECHO %~n0: No Dynamic assets Zip file and Package name provided >&2
-	ECHO %~n0: Usage: step2_build_dynamicfeature.bat work\dynamic_assets.zip com.wjmt.aixiang.gp >&2
-	EXIT /B 1
+    ECHO %~n0: No Dynamic assets Zip file and Package name provided >&2
+    ECHO %~n0: Usage: step2_build_dynamicfeature.bat work\dynamic_assets.zip com.wjmt.aixiang.gp >&2
+    EXIT /B 1
 )
 
 REM Clean up aab

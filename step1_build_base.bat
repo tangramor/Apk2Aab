@@ -18,26 +18,26 @@ set minsdkver=%4
 set targetsdkver=%5
 
 if "%versioncode%"=="" (
-	set versioncode=1
+    set versioncode=1
 )
 
 if "%versionname%"=="" (
-	set versionname=1.0
+    set versionname=1.0
 )
 
 if "%minsdkver%"=="" (
-	set minsdkver=19
+    set minsdkver=19
 )
 
 if "%targetsdkver%"=="" (
-	set targetsdkver=30
+    set targetsdkver=30
 )
 
 if "%apk%"=="" (
-	ECHO %~n0: No APK file provided >&2
-	ECHO %~n0: "Usage: step1_decode.bat work\<APKFile> <versioncode>(optional) <versionname>(optional) <minsdkver>(optional) <targetsdkver>(optional)" >&2
+    ECHO %~n0: No APK file provided >&2
+    ECHO %~n0: "Usage: step1_decode.bat work\<APKFile> <versioncode>(optional) <versionname>(optional) <minsdkver>(optional) <targetsdkver>(optional)" >&2
     ECHO %~n0: "Example: step1_decode.bat work\Demo.apk 1 1.0 19 30" >&2
-	EXIT /B 1
+    EXIT /B 1
 )
 
 mkdir work

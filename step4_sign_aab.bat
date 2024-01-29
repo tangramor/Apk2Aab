@@ -21,9 +21,9 @@ REM Key Alias
 set keyalias=%4
 
 if "%keyalias%"=="" (
-	ECHO %~n0: No keystore related parameters provided >&2
-	ECHO %~n0: Usage: step4_sign_aab.bat work\keystore storepass keypass keyalias >&2
-	EXIT /B 1
+    ECHO %~n0: No keystore related parameters provided >&2
+    ECHO %~n0: Usage: step4_sign_aab.bat work\keystore storepass keypass keyalias >&2
+    EXIT /B 1
 )
 
 REM Sign AAB file
