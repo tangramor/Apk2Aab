@@ -13,9 +13,11 @@ You can replace the jar/exe files to match your requiremnts. Current these files
 
 ## Usage
 
+Put your original apk file and assets zip file under **work** folder.
+
 ### Step 1
 
-Execute `step1_build_base.bat`. It will depack the work\<original_apk>.apk file and build the **work\base.zip** file.
+Execute `step1_build_base.bat`. It will depack the `work\<original_apk>.apk` file and build the **work\base.zip** file.
 
 Usage: `step1_decode.bat work\<APKFile> <versioncode>(optional) <versionname>(optional) <minsdkver>(optional) <targetsdkver>(optional)`
 
@@ -23,7 +25,7 @@ Example: `step1_decode.bat work\original_apk.apk 1 1.0.0 19 30`
 
 ### Step 2
 
-Execute `step2_build_dynamicfeature.bat`. It will depack the work\<dynamic_assets>.zip file and build the **work\InstallDynamicFeature.zip** file.
+Execute `step2_build_dynamicfeature.bat`. It will depack the `work\<dynamic_assets>.zip` file and build the **work\InstallDynamicFeature.zip** file.
 
 Usage: `step2_build_dynamicfeature.bat work\<dynamic_assets>.zip <packagename>`
 
