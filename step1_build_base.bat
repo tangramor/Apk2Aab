@@ -14,6 +14,8 @@ set apk=%1
 
 set versioncode=%2
 set versionname=%3
+set minsdkver=%4
+set targetsdkver=%5
 
 if "%versioncode%"=="" (
 	set versioncode=1
@@ -23,10 +25,18 @@ if "%versionname%"=="" (
 	set versionname=1.0
 )
 
+if "%minsdkver%"=="" (
+	set minsdkver=19
+)
+
+if "%targetsdkver%"=="" (
+	set targetsdkver=30
+)
+
 if "%apk%"=="" (
 	ECHO %~n0: No APK file provided >&2
-	ECHO %~n0: "Usage: step1_decode.bat work\<APKFile> <versioncode>(optional) <versionname>(optional)" >&2
-    ECHO %~n0: "Example: step1_decode.bat work\Demo.apk 1 1.0" >&2
+	ECHO %~n0: "Usage: step1_decode.bat work\<APKFile> <versioncode>(optional) <versionname>(optional) <minsdkver>(optional) <targetsdkver>(optional)" >&2
+    ECHO %~n0: "Example: step1_decode.bat work\Demo.apk 1 1.0 19 30" >&2
 	EXIT /B 1
 )
 
@@ -49,7 +59,7 @@ REM Clean up base.bak
 del work\base.apk /F /Q
 
 REM Link resources
-aapt2 link --proto-format -o work\base.apk -I android_30.jar --min-sdk-version 19 --target-sdk-version 30 --version-code %versioncode% --version-name %versionname% --manifest work\decode_apk_dir\AndroidManifest.xml -R work\compiled_resources.zip --auto-add-overlay
+aapt2 link --proto-format -o work\base.apk -I android_30.jar --min-sdk-version %minsdkver% --target-sdk-version %targetsdkver% --version-code %versioncode% --version-name %versionname% --manifest work\decode_apk_dir\AndroidManifest.xml -R work\compiled_resources.zip --auto-add-overlay
 IF %ERRORLEVEL% NEQ 0 GOTO ERROR
 
 REM Clean up base folder
