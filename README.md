@@ -4,7 +4,7 @@ A bunch of Windows batch scripts to convert an Android App Package (APK) to Andr
 
 You can replace the jar/exe files to match your requiremnts. Current these files' version:
 
-- aapt2.exe: 2.19-6739378
+- aapt2.exe: 2.19
 - android_30.jar: 30
 - apktool.jar: 2.8.1
 - bundletool-all-1.15.6.jar: 1.15.6
